@@ -310,7 +310,7 @@ static bool drawWireframe(MeshPart* part)
     {
     case Mesh::TRIANGLES:
         {
-            for (size_t i = 0; i < indexCount; i += 3)
+            for (unsigned int i = 0; i < indexCount; i += 3)
             {
                 GL_ASSERT( glDrawElements(GL_LINE_LOOP, 3, part->getIndexFormat(), ((const GLvoid*)(i*indexSize))) );
             }
@@ -319,7 +319,7 @@ static bool drawWireframe(MeshPart* part)
 
     case Mesh::TRIANGLE_STRIP:
         {
-            for (size_t i = 2; i < indexCount; ++i)
+            for (unsigned int i = 2; i < indexCount; ++i)
             {
                 GL_ASSERT( glDrawElements(GL_LINE_LOOP, 3, part->getIndexFormat(), ((const GLvoid*)((i-2)*indexSize))) );
             }
